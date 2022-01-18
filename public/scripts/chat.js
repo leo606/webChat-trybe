@@ -23,4 +23,10 @@ socket.on('nick', (nick) => {
   nickSpan.innerHTML = nickname;
 });
 
-socket.on('message', (msg) => console.log(msg));
+socket.on('message', (msg) => {
+  const msgsUl = document.getElementById('chat-messages');
+  const msgLi = document.createElement('li');
+  msgLi.dataset.testid = 'message';
+  msgLi.innerHTML = msg;
+  msgsUl.appendChild(msgLi);
+});
