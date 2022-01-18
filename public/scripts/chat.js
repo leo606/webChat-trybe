@@ -1,12 +1,26 @@
 const socket = window.io();
 
-const msgInput = document.getElementById('message-input');
-const sendBtn = document.getElementById('send-btn');
+const nickSaveBtn = document.getElementById('nick-save-btn');
+const sendMsgBtn = document.getElementById('send-btn');
+let nickname = '';
 
-sendBtn.addEventListener('click', (e) => {
+sendMsgBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  const msgInput = document.getElementById('message-input');
+  socket.emit('message', { nickname, chatMessage: msgInput.value });
+  msgInput.innerHTML = '';
+});
 
-  socket.emit('message', { nickname: 'nicccck', chatMessage: msgInput.value });
+nickSaveBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const nickInput = document.getElementById('nick-input');
+  socket.emit('changeNick', nickInput.value);
+});
+
+socket.on('nick', (nick) => {
+  const nickSpan = document.getElementById('user-nick-span');
+  nickname = nick;
+  nickSpan.innerHTML = nickname;
 });
 
 socket.on('message', (msg) => console.log(msg));

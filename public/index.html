@@ -8,8 +8,13 @@
 </head>
 <body>
   <form>
-    <input type="text" id="message-input">
-    <input type="submit" id="send-btn" value="Enviar">
+    <input type="text" name="" id="nick-input" data-testid="nickname-box">
+    <input type="submit" value="Save" id="nick-save-btn" data-testid="nickname-button">
+  </form>
+  <form>
+    <span data-testid="online-user" id="user-nick-span"></span>
+    <input type="text" id="message-input" data-testid="message-box">
+    <input type="submit" id="send-btn" value="Send" data-testid="send-button">
   </form>
   <script src="/socket.io/socket.io.js"></script>
   <script src="scripts/chat.js"></script>

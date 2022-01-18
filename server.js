@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 
 const app = express();
@@ -20,6 +21,6 @@ app.get('/', (_req, res) => {
   res.sendFile('./public/index.html');
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 http.listen(PORT, () => console.log('listening', PORT));
