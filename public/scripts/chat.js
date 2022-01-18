@@ -8,13 +8,13 @@ sendMsgBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const msgInput = document.getElementById('message-input');
   socket.emit('message', { nickname, chatMessage: msgInput.value });
-  msgInput.innerHTML = '';
+  msgInput.value = null;
 });
 
 nickSaveBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const nickInput = document.getElementById('nick-input');
-  socket.emit('changeNick', nickInput.value);
+  socket.emit('changeNick', { nickname, newNick: nickInput.value });
 });
 
 socket.on('nick', (nick) => {
