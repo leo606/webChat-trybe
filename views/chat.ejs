@@ -14,7 +14,11 @@
     <input type="text" name="" id="nick-input" data-testid="nickname-box">
     <button id="nick-save-btn" data-testid="nickname-button">Save</button>
   </form>
-  <ul id="chat-messages"></ul>
+  <ul id="chat-messages">
+    <% messages.forEach((msg) => {%>
+      <li data-testid="message"><%= msg %></li>
+    <%})%>
+  </ul>
   <!-- chat -->
   <form>
     <span data-testid="online-user" id="user-nick-span"></span>

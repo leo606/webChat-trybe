@@ -4,7 +4,7 @@ const options = {
   hour12: true,
 };
 
-module.exports = () => {
-  const time = new Intl.DateTimeFormat('pt-BR', options).format(new Date());
+module.exports = (date) => {
+  const time = new Intl.DateTimeFormat('pt-BR', options).format(date);
   return time.replace(/\//g, '-');
 };

@@ -20,10 +20,7 @@ const sockets = require('./sockets');
 
 sockets.chat(io);
 
-app.get('/', (_req, res) => {
-  res.status(200).render('chat');
-});
+app.use(require('./controllers'));
 
 const PORT = process.env.PORT || 3000;
-
 http.listen(PORT, () => console.log('listening', PORT));
