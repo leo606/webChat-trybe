@@ -10,14 +10,17 @@
 
 <body>
   <!-- nick -->
+  <span>test</span>
   <form>
     <input type="text" name="" id="nick-input" data-testid="nickname-box">
     <button id="nick-save-btn" data-testid="nickname-button">Save</button>
   </form>
   <ul id="chat-messages">
-    <% messages.forEach((msg) => {%>
-      <li data-testid="message"><%= msg %></li>
-    <%})%>
+    <% messages.forEach((msg)=> {%>
+      <li data-testid="message">
+        <%= msg %>
+      </li>
+      <%})%>
   </ul>
   <!-- chat -->
   <form>
@@ -25,6 +28,8 @@
     <input type="text" id="message-input" data-testid="message-box">
     <button data-testid="send-button" id="send-btn">Send</button>
   </form>
+  <!-- userList -->
+  <ul id='users-list'></ul>
   <script src="/socket.io/socket.io.js"></script>
   <script src="scripts/chat.js"></script>
 </body>

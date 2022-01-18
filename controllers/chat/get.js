@@ -13,12 +13,3 @@ module.exports = async (_req, res) => {
     console.log(e);
   }
 };
-
-// {
-//   "_id": {
-//     "$oid": "61e705f4a0209eb433605870"
-//   },
-//   "nickname": "9c79d9ic68ei89g7",
-//   "chatMessage": "ghjghjghjghjghj",
-//   "sId": "s1GFv9wd_zZYttIqAAAJ"
-// }

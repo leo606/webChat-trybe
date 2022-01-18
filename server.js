@@ -18,9 +18,9 @@ app.use(express.static(`${__dirname}/public`));
 
 const sockets = require('./sockets');
 
-sockets.chat(io);
-
 app.use(require('./controllers'));
+
+sockets.chat(io);
 
 const PORT = process.env.PORT || 3000;
 http.listen(PORT, () => console.log('listening', PORT));
