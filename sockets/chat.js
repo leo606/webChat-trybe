@@ -1,7 +1,6 @@
 const userConn = require('./userConn');
 const message = require('./message');
 const changeNick = require('./changeNick');
-// const disconnect = require('./disconnect');
 
 let connectedUsers = [];
 
