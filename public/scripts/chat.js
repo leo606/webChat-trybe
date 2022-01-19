@@ -34,13 +34,13 @@ socket.on('message', (msg) => {
 
 socket.on('usersList', (list) => {
   const usersUl = document.getElementById('users-list');
-  console.log(list);
   usersUl.innerHTML = null;
 
-  list.forEach((user) => {
-    const userLi = document.createElement('li');
-    userLi.innerHTML = user;
-    userLi.dataset.testid = 'online-user';
-    usersUl.appendChild(userLi);
-  });
+  list.filter((user) => user !== nickname)
+    .forEach((user) => {
+      const userLi = document.createElement('li');
+      userLi.innerHTML = user;
+      userLi.dataset.testid = 'online-user';
+      usersUl.appendChild(userLi);
+    });
 });

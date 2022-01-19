@@ -7,7 +7,7 @@ let connectedUsers = [];
 
 module.exports = (io) => {
   io.on('connection', (socket) => {
-    socket.on('userConn', () => userConn(socket, connectedUsers));
+    socket.on('userConn', () => userConn(io, socket, connectedUsers));
     socket.on('message', (msg) => message(io, msg));
     socket.on('changeNick', (nickData) => changeNick(socket, nickData, connectedUsers));
 
