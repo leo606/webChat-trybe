@@ -30,6 +30,7 @@ socket.on('message', (msg) => {
   msgLi.dataset.testid = 'message';
   msgLi.innerHTML = msg;
   msgsUl.appendChild(msgLi);
+  msgsUl.scrollTop = msgsUl.scrollHeight;
 });
 
 socket.on('usersList', (list) => {
