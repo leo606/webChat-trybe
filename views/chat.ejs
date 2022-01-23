@@ -11,20 +11,20 @@
 
 <body>
   <!-- nick -->
-  <section class="sec-left">
+  <section class="sec-left container">
     <form id="nick-form">
       <input type="text" name="" id="nick-input" data-testid="nickname-box" placeholder="nickname">
       <button id="nick-save-btn" data-testid="nickname-button">Save</button>
     </form>
     <ul id='users-list'></ul>
   </section>
-  <section class="sec-right">
+  <section class="sec-right container">
     <ul id="chat-messages">
       <% messages.forEach((msg)=> {%>
         <li data-testid="message">
           <%= msg %>
         </li>
-        <%})%>
+      <%})%>
     </ul>
     <!-- chat -->
     <form id="message-form">
