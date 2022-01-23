@@ -16,6 +16,7 @@ nickSaveBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const nickInput = document.getElementById('nick-input');
   socket.emit('changeNick', { nickname, newNick: nickInput.value });
+  nickInput.value = null;
 });
 
 socket.on('nick', (nick) => {
